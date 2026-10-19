@@ -76,7 +76,7 @@ export const BrazilMap: React.FC = () => {
   const [activeNode, setActiveNode] = useState<NodePoint | null>(null);
 
   return (
-    <div className="relative w-full max-w-[540px] aspect-[500/520] mx-auto select-none">
+    <div className="relative w-full max-w-[640px] aspect-[500/520] mx-auto select-none">
       {/* Glow de fundo */}
       <div className="absolute inset-0 bg-brand-blue/10 rounded-full blur-3xl pointer-events-none" />
 

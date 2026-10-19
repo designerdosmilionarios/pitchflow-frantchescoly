@@ -5,7 +5,6 @@ import { MovementSection } from "@/components/MovementSection";
 import { FounderSection } from "@/components/FounderSection";
 import { PlatformSection } from "@/components/PlatformSection";
 import { BooksSection } from "@/components/BooksSection";
-import { EventsSection } from "@/components/EventsSection";
 import { InvitationSection } from "@/components/InvitationSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { Footer } from "@/components/Footer";
@@ -22,25 +21,22 @@ export default function HomePage() {
       {/* 02. Movimento / O Brasil Conectado (#movimento) */}
       <MovementSection />
 
-      {/* 03. O Idealizador / Autoridade (#idealizador) */}
+      {/* 03. O Idealizador (#idealizador) */}
       <FounderSection />
 
       {/* 04. A Plataforma PitchFlow (#plataforma) */}
       <PlatformSection />
 
-      {/* 05. Livros / Quebra de ritmo clara (#livros) */}
+      {/* 05. Livros (#livros) */}
       <BooksSection />
 
-      {/* 06. Eventos / Prova Social (#eventos) */}
-      <EventsSection />
-
-      {/* 07. Convite / Conversão Principal com Google Sheets (#convite) */}
+      {/* 06. Convite / Conversão Principal (#convite) */}
       <InvitationSection />
 
-      {/* 08. Contratações / Oferta B2B (#contratacoes) */}
+      {/* 07. Contratações / Oferta B2B (#contratacoes) */}
       <ServicesSection />
 
-      {/* 09. Rodapé Institucional (#contato) */}
+      {/* 08. Rodapé Institucional (#contato) */}
       <Footer />
     </main>
   );

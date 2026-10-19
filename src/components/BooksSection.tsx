@@ -1,29 +1,63 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
-import { SITE_CONTENT } from "@/content/site-content";
 import { ResponsivePhoto } from "./ResponsivePhoto";
 import { Reveal } from "./Reveal";
+import { SITE_CONTENT } from "@/content/site-content";
 
 export function BooksSection() {
-  const book = SITE_CONTENT.books.items[0];
+  const { books } = SITE_CONTENT;
   return (
     <section id="livros" className="book-editorial book-responsive" aria-labelledby="book-title">
       <div className="editorial-container book-layout">
         <Reveal className="book-heading">
           <p className="section-kicker">03 / O livro</p>
-          <h2 id="book-title" className="font-condensed">O próximo<br />capítulo começa<br /><span>com uma ideia.</span></h2>
+          <h2 id="book-title" className="font-condensed">
+            O próximo
+            <br />
+            capítulo começa
+            <br />
+            <span>com uma ideia.</span>
+          </h2>
         </Reveal>
-        <Reveal delay={0.12} duration={1.2} className="book-art">
-          <ResponsivePhoto desktop={{src:book.coverImage,width:1536,height:1024}} mobile={{src:"/assets/photos/book-mobile.png",width:941,height:1672}} alt={`Livro ${book.title}, de Frantchescoly Vilella`} sizes="(max-width: 900px) 100vw, 60vw" className="h-auto w-full object-contain" />
-          <div className="book-caption"><span>Visão. Coragem. Movimento.</span><span>Uma leitura, novas possibilidades.</span></div>
-        </Reveal>
-        <Reveal className="book-detail">
-          <span className="book-author">Frantchescoly Vilella</span>
-          <h3>{book.title}</h3>
-          <p>{book.description}</p>
-          <a href={book.purchaseUrl || "#convite"} className="editorial-text-link">Quero conhecer o livro <ArrowUpRight size={18} /></a>
-        </Reveal>
+
+        <div className="book-grid">
+          {books.items.map((book, index) => (
+            <Reveal key={book.id} delay={0.12 + index * 0.08} duration={1.2} className="book-card">
+              <div className="book-art">
+                <ResponsivePhoto
+                  desktop={{ src: book.coverImage.desktop, width: 1536, height: 1024 }}
+                  mobile={{ src: book.coverImage.mobile, width: 941, height: 1672 }}
+                  alt={`Livro ${book.title}, de Frantchescoly Vilella`}
+                  sizes="(max-width: 900px) 100vw, 50vw"
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+
+              <div className="book-detail">
+                <span className="book-author">Frantchescoly Vilella</span>
+                <h3>{book.title}</h3>
+                <p>{book.description}</p>
+                <a
+                  href={book.purchaseUrl || "#convite"}
+                  className="editorial-text-link"
+                >
+                  {book.status === "soon" ? "Saiba mais" : "Quero conhecer o livro"}{" "}
+                  <ArrowUpRight size={18} />
+                </a>
+              </div>
+
+              {book.status === "soon" && (
+                <span className="book-soon-badge">Em breve</span>
+              )}
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="book-caption">
+          <span>Visão. Coragem. Movimento.</span>
+          <span>Uma leitura, novas possibilidades.</span>
+        </div>
       </div>
     </section>
   );

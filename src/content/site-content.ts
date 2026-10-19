@@ -9,7 +9,7 @@ export interface BookItem {
   title: string;
   subtitle: string;
   description: string;
-  coverImage: string;
+  coverImage: { desktop: string; mobile: string };
   status: "published" | "soon";
   purchaseUrl?: string;
 }
@@ -50,7 +50,6 @@ export const SITE_CONTENT = {
     { label: "Idealizador", href: "#idealizador" },
     { label: "PitchFlow", href: "#plataforma" },
     { label: "O livro", href: "#livros" },
-    { label: "Eventos", href: "#eventos" },
     { label: "Contato", href: "#convite" },
   ],
 
@@ -83,7 +82,8 @@ export const SITE_CONTENT = {
   },
 
   movement: {
-    headline: "27 UNIDADES FEDERATIVAS. UM SÓ PROPÓSITO.",
+    headline: "27 ESTADOS.",
+    headlineAccent: "UM SÓ PROPÓSITO.",
     description:
       "Cada cidade, uma nova oportunidade de conexão, aprendizado e impacto. Vamos percorrer as 27 unidades federativas brasileiras para conversar com quem constrói o futuro dos negócios.",
     statusNote: "Visão e planejamento oficial para a jornada nacional de 2027.",
@@ -97,7 +97,7 @@ export const SITE_CONTENT = {
     badgeRight: "MESMO PROPÓSITO. NOVOS HORIZONTES.",
     cta: {
       label: "Acompanhar a jornada",
-      href: "#eventos",
+      href: "#idealizador",
     },
   },
 
@@ -130,6 +130,15 @@ export const SITE_CONTENT = {
         isConfirmed: true,
       },
     ] as StatItem[],
+    // Presença internacional — número de palestras por país/cidade
+    lectures: [
+      { count: "1x", city: "Belfast", country: "Irlanda do Norte" },
+      { count: "4x", city: "Londres", country: "Reino Unido" },
+      { count: "50x", city: "Lima", country: "Peru" },
+      { count: "+200x", city: "Brasil", country: "Brasil" },
+    ],
+    photoDesktop: { path: "/assets/photos/founder-about.png", width: 1672, height: 941 },
+    photoMobile: { path: "/assets/photos/founder-about-mobile.png", width: 1080, height: 1920 },
   },
 
   platform: {
@@ -167,15 +176,25 @@ export const SITE_CONTENT = {
     eyebrow: "LIVROS",
     headline: "IDEIAS QUE TRANSFORMAM REALIDADES.",
     description:
-      "Conheça o livro de Frantchescoly Vilella sobre ideias de negócios e os primeiros passos no empreendedorismo.",
+      "Conheça os livros publicados por Frantchescoly Vilella sobre negócios, marketing e os primeiros passos no empreendedorismo.",
     items: [
       {
         id: "livro-1",
-        title: "50 negócios que você pode montar com 50 mil",
+        title: "50 NEGOCIOS QUE VOCE PODE MONTAR COM 50 MIL",
         subtitle: "Ideias para começar. Estratégia para avançar.",
         description:
           "50 ideias de negócios e um passo a passo estratégico para quem quer começar sua jornada no mundo empresarial.",
-        coverImage: "/assets/photos/book-v2.png",
+        coverImage: { desktop: "/assets/photos/book-1-desktop.png", mobile: "/assets/photos/book-1-mobile.png" },
+        status: "published",
+        purchaseUrl: "#convite",
+      },
+      {
+        id: "livro-2",
+        title: "EM BUSCA DO PRIMEIRO MILHAO",
+        subtitle: "10 modelos de negocio em $1.000 a $3.000",
+        description:
+          "O caminho prático para gerar receita inicial validando ideias com baixo investimento e alta conversao.",
+        coverImage: { desktop: "/assets/photos/book-2-desktop.jpg", mobile: "/assets/photos/book-2-mobile.png" },
         status: "published",
         purchaseUrl: "#convite",
       },
@@ -259,15 +278,15 @@ export const SITE_CONTENT = {
   },
 
   services: {
-    headline: "PALESTRAS, MENTORIA E PROJETOS COMERCIAIS.",
+    headline: "PALESTRAS E PROJETOS COMERCIAIS.",
     description:
-      "Para solicitações de palestras, mentorias executivas e outros projetos comerciais corporativos, consulte as modalidades disponíveis.",
+      "Para convidar Frantchescoly Vilella para o seu evento, preencha o formulário abaixo com os detalhes da sua proposta.",
     items: [
       {
         id: "palestras",
         title: "PALESTRAS",
-        priceExact: "R$ 27.000",
-        priceNote: "Valor de referência / Sob consulta por região",
+        priceExact: "R$ 30.000,00",
+        priceNote: "Valor de referência",
         description:
           "Conteúdo estratégico, experiências reais e uma nova visão sobre negócios, conexões e oportunidades para congressos e convenções.",
         deliverables: [
@@ -279,25 +298,9 @@ export const SITE_CONTENT = {
         ctaLabel: "Solicitar proposta de palestra",
         targetService: "Palestra Comercial",
       },
-      {
-        id: "mentoria",
-        title: "MENTORIA",
-        priceExact: "R$ 70.000",
-        priceNote: "Programa exclusivo / Sob consulta de vagas",
-        description:
-          "Acompanhamento estratégico para empresários e fundadores, com foco em crescimento, posicionamento e geração de oportunidades.",
-        deliverables: [
-          "Diagnóstico estratégico inicial",
-          "Sessões individuais de direcionamento",
-          "Revisão de pitch e modelo de negócios",
-          "Acesso ao ecossistema PitchFlow",
-        ],
-        ctaLabel: "Solicitar proposta de mentoria",
-        targetService: "Mentoria Empresarial",
-      },
     ] as ServiceItem[],
     cta: {
-      label: "Solicitar proposta comercial",
+      label: "Falar com a produção",
       href: "#convite",
     },
   },
@@ -310,7 +313,6 @@ export const SITE_CONTENT = {
       { label: "Frantchescoly", href: "#idealizador" },
       { label: "PitchFlow", href: "#plataforma" },
       { label: "O livro", href: "#livros" },
-      { label: "Eventos", href: "#eventos" },
       { label: "Contato", href: "#convite" },
     ],
     social: [

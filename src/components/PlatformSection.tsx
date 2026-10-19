@@ -18,7 +18,7 @@ export function PlatformSection() {
         </div>
         <Reveal y={35} duration={1.2} className="platform-image-reveal">
           <motion.figure className="platform-image" initial={reduce ? false : {scale:.96}} whileInView={{scale:1}} viewport={{once:true}} transition={{duration:1.4,ease:[0.22,1,0.36,1]}}>
-            <ResponsivePhoto desktop={{src:"/assets/photos/platform-v2.png",width:1672,height:941}} mobile={{src:"/assets/photos/platform-mobile.png",width:941,height:1672}} alt="Apresentação visual da PitchFlow em um notebook e um celular, com interface para conectar startups e investidores" sizes="(max-width: 700px) 100vw, 90vw" className="h-auto w-full object-contain"/>
+            <ResponsivePhoto desktop={{src:"/assets/photos/platform-v2.png",width:1672,height:941}} mobile={{src:"/assets/photos/platform-v2-mobile.png",width:941,height:1672}} alt="Apresentação visual da PitchFlow em um notebook e um celular, com interface para conectar startups e investidores" sizes="(max-width: 700px) 100vw, 90vw" className="h-auto w-full object-contain"/>
             <figcaption><span>PitchFlow · Desktop & Mobile</span><span>Conceito visual da plataforma</span></figcaption>
           </motion.figure>
         </Reveal>

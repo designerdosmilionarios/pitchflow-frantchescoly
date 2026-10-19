@@ -2,25 +2,34 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface LogoProps {
-  variant?: "default" | "light";
-  showText?: boolean;
   className?: string;
+  forDarkMode?: boolean;
 }
 
-export const Logo: React.FC<LogoProps> = ({
-  variant = "default",
-  showText = true,
-  className = "",
-}) => {
+export const Logo: React.FC<LogoProps> = ({ className = "", forDarkMode = false }) => {
   return (
-    <div
-      className={`group flex items-center gap-3 transition-opacity duration-200 hover:opacity-100 ${className}`}
-      aria-label="PitchFlow Movement"
+    <Link
+      href="#inicio"
+      aria-label="PitchFlow Movement - Inicio"
+      className={`group inline-flex items-center transition-opacity duration-200 hover:opacity-90 ${className}`}
     >
-      {/* Icone oficial com glow */}
-      <div className="relative h-10 w-10 shrink-0 p-1 transition-transform duration-300 group-hover:scale-105">
+      {/* Logo oficial completo em PNG (símbolo + MOVEMENT + FRANTCHESCOLY VILELLA) */}
+      <div className="relative h-10 md:h-11 w-auto transition-transform duration-300 group-hover:scale-105">
+        <Image
+          src="/assets/logo.png"
+          alt="PitchFlow Movement - Frantchescoly Vilella"
+          width={108}
+          height={36}
+          className="h-full w-auto object-contain"
+          priority
+        />
+      </div>
+
+      {/* Ícone quadrado (usado opcionalmente quando o espaço é muito pequeno) */}
+      <div className="relative hidden">
         <Image
           src="/assets/icon.png"
           alt="PitchFlow Movement"
@@ -30,33 +39,6 @@ export const Logo: React.FC<LogoProps> = ({
           priority
         />
       </div>
-
-      {showText && (
-        <div className="flex flex-col leading-none">
-          <div className="flex items-center gap-2">
-            <span
-              className={`font-condensed text-[22px] uppercase ${
-                variant === "light" ? "text-text-dark" : "text-white"
-              }`}
-              style={{ letterSpacing: "0.02em", lineHeight: "0.95" }}
-            >
-              PITCHFLOW
-            </span>
-            <span
-              className="relative h-1.5 w-1.5 rounded-full bg-brand-cyan"
-              aria-hidden="true"
-            >
-              <span className="absolute inset-0 rounded-full bg-brand-cyan/40 animate-soft-ping" />
-            </span>
-          </div>
-          <span
-            className="mt-0.5 text-[10.5px] font-semibold uppercase text-brand-cyan"
-            style={{ letterSpacing: "0.34em" }}
-          >
-            MOVEMENT
-          </span>
-        </div>
-      )}
-    </div>
+    </Link>
   );
 };
