@@ -1,0 +1,320 @@
+export interface StatItem {
+  value: string;
+  label: string;
+  isConfirmed: boolean;
+}
+
+export interface BookItem {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  coverImage: string;
+  status: "published" | "soon";
+  purchaseUrl?: string;
+}
+
+export interface EventItem {
+  id: string;
+  title: string;
+  role: string;
+  location: string;
+  image: string;
+  date?: string;
+}
+
+export interface ServiceItem {
+  id: string;
+  title: string;
+  priceNote: string;
+  priceExact?: string;
+  description: string;
+  deliverables: string[];
+  ctaLabel: string;
+  targetService: string;
+}
+
+export const SITE_CONTENT = {
+  brand: {
+    name: "PitchFlow Movement",
+    tagline: "One Movement. Infinite Opportunities.",
+    supportTagline: "DO BRASIL PARA O MUNDO.",
+    founder: "Frantchescoly Vilella",
+    founderRole: "EMPRESÁRIO, AUTOR E IDEALIZADOR DO PITCHFLOW",
+    manifesto:
+      "Uma jornada nacional em 2027 para conectar pessoas, ideias e oportunidades. Palestras, eventos e podcasts que aproximam startups, investidores e quem transforma negócios.",
+  },
+
+  navigation: [
+    { label: "Movimento", href: "#movimento" },
+    { label: "Idealizador", href: "#idealizador" },
+    { label: "PitchFlow", href: "#plataforma" },
+    { label: "O livro", href: "#livros" },
+    { label: "Eventos", href: "#eventos" },
+    { label: "Contato", href: "#convite" },
+  ],
+
+  hero: {
+    eyebrow: "ONE MOVEMENT. INFINITE OPPORTUNITIES.",
+    headlinePart1: "PITCHFLOW",
+    headlinePart2: "MOVEMENT",
+    subheadline: "DO BRASIL PARA O MUNDO.",
+    description:
+      "Uma jornada nacional em 2027 para conectar pessoas, ideias e oportunidades. Palestras, eventos e podcasts para apresentar o PitchFlow e fortalecer o ecossistema de startups e investimentos.",
+    primaryCta: {
+      label: "Quero convidar para meu evento",
+      href: "#convite",
+    },
+    secondaryCta: {
+      label: "Conhecer a PitchFlow",
+      href: "#plataforma",
+    },
+    videoCta: {
+      available: false, // apenas se houver vídeo real confirmado
+      label: "ASSISTIR AO VÍDEO",
+    },
+    pills: [
+      "Palestras",
+      "Podcasts",
+      "Congressos",
+      "Painéis",
+      "Eventos empresariais",
+    ],
+  },
+
+  movement: {
+    headline: "27 UNIDADES FEDERATIVAS. UM SÓ PROPÓSITO.",
+    description:
+      "Cada cidade, uma nova oportunidade de conexão, aprendizado e impacto. Vamos percorrer as 27 unidades federativas brasileiras para conversar com quem constrói o futuro dos negócios.",
+    statusNote: "Visão e planejamento oficial para a jornada nacional de 2027.",
+    highlights: [
+      { id: "1", text: "27 unidades federativas brasileiras" },
+      { id: "2", text: "Eventos, congressos e podcasts" },
+      { id: "3", text: "Startups, fundadores e investidores" },
+      { id: "4", text: "Conhecimento prático e networking qualificado" },
+      { id: "5", text: "Impulso ao ecossistema nacional" },
+    ],
+    badgeRight: "MESMO PROPÓSITO. NOVOS HORIZONTES.",
+    cta: {
+      label: "Acompanhar a jornada",
+      href: "#eventos",
+    },
+  },
+
+  founder: {
+    eyebrow: "O IDEALIZADOR",
+    name: "FRANTCHESCOLY VILELLA",
+    bio: [
+      "Empresário, autor e idealizador do PitchFlow. Apaixonado por negócios, tecnologia e pessoas, construiu sua trajetória conectando o mundo real ao potencial das novas gerações.",
+      "Agora, com o PitchFlow Movement, ele leva essa experiência para todo o Brasil em palestras, painéis e encontros com líderes que moldam o mercado.",
+    ],
+    ctaHistory: {
+      label: "Conheça minha história",
+      href: "#convite",
+    },
+    // Estatísticas qualitativas e transparentes
+    stats: [
+      {
+        value: "+50",
+        label: "EVENTOS REALIZADOS",
+        isConfirmed: true,
+      },
+      {
+        value: "+100K",
+        label: "PESSOAS IMPACTADAS",
+        isConfirmed: true,
+      },
+      {
+        value: "27",
+        label: "ESTADOS EM 2027",
+        isConfirmed: true,
+      },
+    ] as StatItem[],
+  },
+
+  platform: {
+    eyebrow: "A PLATAFORMA",
+    name: "PITCHFLOW",
+    subtitle: "CONECTANDO STARTUPS E INVESTIDORES",
+    description:
+      "O PitchFlow é uma plataforma que aproxima startups e investidores, facilitando conexões, oportunidades e negócios de alto potencial em um ambiente dinâmico e inteligente.",
+    cta: {
+      label: "Quero entrar na lista de espera",
+      href: "#convite",
+    },
+    features: [
+      {
+        title: "Conexões qualificadas",
+        description: "Matching assertivo entre teses de investimento e startups em tração.",
+      },
+      {
+        title: "Mais oportunidades",
+        description: "Visibilidade ampliada para soluções inovadoras de todas as regiões.",
+      },
+      {
+        title: "Processo simples e seguro",
+        description: "Fluxos otimizados para apresentação, análise e tomada de decisão.",
+      },
+      {
+        title: "Foco em resultados",
+        description: "Conversas com objetivo direto de geração de valor e rodadas reais.",
+      },
+    ],
+    mockupNote: "A interface apresentada é ilustrativa da versão em desenvolvimento.",
+  },
+
+  books: {
+    eyebrow: "LIVROS",
+    headline: "IDEIAS QUE TRANSFORMAM REALIDADES.",
+    description:
+      "Conheça o livro de Frantchescoly Vilella sobre ideias de negócios e os primeiros passos no empreendedorismo.",
+    items: [
+      {
+        id: "livro-1",
+        title: "50 negócios que você pode montar com 50 mil",
+        subtitle: "Ideias para começar. Estratégia para avançar.",
+        description:
+          "50 ideias de negócios e um passo a passo estratégico para quem quer começar sua jornada no mundo empresarial.",
+        coverImage: "/assets/photos/book-v2.png",
+        status: "published",
+        purchaseUrl: "#convite",
+      },
+    ] as BookItem[],
+    soonCard: {
+      title: "EM BREVE",
+      subtitle: "NOVOS PROJETOS EDITORIAIS",
+      description: "Novos títulos em desenvolvimento com lançamento para a turnê de 2027.",
+    },
+  },
+
+  events: {
+    eyebrow: "PRESENÇA EM GRANDES PALCOS",
+    headline: "CONVERSAS REAIS. RESULTADOS REAIS.",
+    description:
+      "Eventos, podcasts e encontros que geram conexões, compartilham experiências e abrem novas oportunidades pelo país.",
+    gallery: [
+      {
+        id: "ev-1",
+        title: "Conferência de Liderança e Negócios",
+        role: "Palestrante Principal",
+        location: "Auditório Central",
+        image: "/assets/photos/IMG_0077.JPEG",
+      },
+      {
+        id: "ev-2",
+        title: "Painel Estratégico com Líderes de Mercado",
+        role: "Painelista & Mediador",
+        location: "Palco Business",
+        image: "/assets/photos/Flavio1.JPG",
+      },
+      {
+        id: "ev-3",
+        title: "Imersão em Pitch & Captação",
+        role: "Keynote Speaker",
+        location: "Centro de Convenções",
+        image: "/assets/photos/IMG_0094.JPEG",
+      },
+      {
+        id: "ev-4",
+        title: "Podcast & Entrevista Exclusiva",
+        role: "Convidado Especial",
+        location: "Estúdio de Gravação",
+        image: "/assets/photos/623394487_18052237376465071_6017299835082379575_n.jpg",
+      },
+      {
+        id: "ev-5",
+        title: "Encontro com Empreendedores e Criadores",
+        role: "Palestra Magna",
+        location: "Arena Inovação",
+        image: "/assets/photos/624706959_18348593962228640_5780900786266241798_n.jpg",
+      },
+    ] as EventItem[],
+    cta: {
+      label: "Convide para seu evento",
+      href: "#convite",
+    },
+  },
+
+  invitation: {
+    headline: "VAMOS LEVAR ESSA CONVERSA PARA O SEU EVENTO OU PODCAST?",
+    description:
+      "Se você é organizador de eventos, produtor de conteúdo ou responsável por um podcast, preencha o formulário e nossa equipe avaliará a viabilidade de agenda para 2027.",
+    benefits: [
+      {
+        title: "SEM CACHÊ",
+        subtitle: "(conforme seleção)",
+        description: "Opções de participação institucional sem cobrança de cachê para eventos alinhados ao propósito do movimento.",
+      },
+      {
+        title: "AVALIAÇÃO INDIVIDUAL",
+        subtitle: "Curadoria criteriosa",
+        description: "Cada convite é analisado individualmente pela equipe de produção da turnê.",
+      },
+      {
+        title: "POSSIBILIDADE DE APOIO",
+        subtitle: "Logística integrada",
+        description: "Alinhamento operacional transparente e direto para garantir excelência de entrega.",
+      },
+    ],
+  },
+
+  services: {
+    headline: "PALESTRAS, MENTORIA E PROJETOS COMERCIAIS.",
+    description:
+      "Para solicitações de palestras, mentorias executivas e outros projetos comerciais corporativos, consulte as modalidades disponíveis.",
+    items: [
+      {
+        id: "palestras",
+        title: "PALESTRAS",
+        priceExact: "R$ 27.000",
+        priceNote: "Valor de referência / Sob consulta por região",
+        description:
+          "Conteúdo estratégico, experiências reais e uma nova visão sobre negócios, conexões e oportunidades para congressos e convenções.",
+        deliverables: [
+          "Keynote de 50 a 70 minutos",
+          "Sessão de Q&A com o público",
+          "Alinhamento prévio com os organizadores",
+          "Divulgação nas redes do movimento",
+        ],
+        ctaLabel: "Solicitar proposta de palestra",
+        targetService: "Palestra Comercial",
+      },
+      {
+        id: "mentoria",
+        title: "MENTORIA",
+        priceExact: "R$ 70.000",
+        priceNote: "Programa exclusivo / Sob consulta de vagas",
+        description:
+          "Acompanhamento estratégico para empresários e fundadores, com foco em crescimento, posicionamento e geração de oportunidades.",
+        deliverables: [
+          "Diagnóstico estratégico inicial",
+          "Sessões individuais de direcionamento",
+          "Revisão de pitch e modelo de negócios",
+          "Acesso ao ecossistema PitchFlow",
+        ],
+        ctaLabel: "Solicitar proposta de mentoria",
+        targetService: "Mentoria Empresarial",
+      },
+    ] as ServiceItem[],
+    cta: {
+      label: "Solicitar proposta comercial",
+      href: "#convite",
+    },
+  },
+
+  footer: {
+    manifesto: "One Movement. Infinite Opportunities.",
+    legal: `© ${new Date().getFullYear()} PitchFlow Movement. Todos os direitos reservados.`,
+    links: [
+      { label: "Movimento", href: "#movimento" },
+      { label: "Frantchescoly", href: "#idealizador" },
+      { label: "PitchFlow", href: "#plataforma" },
+      { label: "O livro", href: "#livros" },
+      { label: "Eventos", href: "#eventos" },
+      { label: "Contato", href: "#convite" },
+    ],
+    social: [
+      { name: "Instagram", url: "https://instagram.com", icon: "instagram" },
+    ],
+  },
+};
